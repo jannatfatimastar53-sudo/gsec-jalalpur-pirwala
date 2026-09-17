@@ -110,30 +110,53 @@ function initAccessibility() {
    2. Navigation & Smooth Scroll
    ========================================================================== */
 function initNavigation() {
-  const header = document.querySelector('.main-header');
-  const mobileToggle = document.querySelector('.mobile-menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const toggleBtn = document.getElementById('sz-mobile-toggle-btn') || document.querySelector('.sz-mobile-toggle');
+  const navLinks = document.getElementById('sz-nav-links') || document.querySelector('.sz-nav-links');
+  const navItems = document.querySelectorAll('.sz-nav-item, .sz-nav-cta');
+  const iconSpan = toggleBtn?.querySelector('.sz-hamburger-icon');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-  });
-
-  mobileToggle?.addEventListener('click', () => {
-    mainNav?.classList.toggle('mobile-active');
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav?.classList.remove('mobile-active');
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (iconSpan) {
+        iconSpan.textContent = isOpen ? '✕' : '☰';
+      } else {
+        toggleBtn.textContent = isOpen ? '✕' : '☰';
+      }
     });
-  });
+
+    // Close mobile menu when clicking any nav item
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          navLinks.classList.remove('active');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          if (iconSpan) {
+            iconSpan.textContent = '☰';
+          } else {
+            toggleBtn.textContent = '☰';
+          }
+        }
+        navItems.forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        if (iconSpan) {
+          iconSpan.textContent = '☰';
+        } else {
+          toggleBtn.textContent = '☰';
+        }
+      }
+    });
+  }
 }
 
 /* ==========================================================================
