@@ -9,10 +9,9 @@ Official website for **Govt. Special Education Centre, Jalalpur Pirwala**, opera
   - High-Contrast color mode.
   - Text sizing controls (`A-`, `A`, `A+`).
   - Dyslexia-friendly typography option.
-- **Leadership Profiles**:
-  - **Ms. Fozia Hamid**: Headmistress / Drawing and Disbursing Officer (DDO), M.Phil in Psychology (Special Education & Teaching).
-  - **Mr. Muhammad Tayyab**: In-Charge Principal / SSET (Hearing Impaired Field), BS-17.
-  - Administrative oversight by the **District Education Officer (DEO) Special Education, Multan**.
+- **Leadership & Governance Structure**:
+  - **Mr. Muhammad Tayyab**: In-Charge Principal / Senior Special Education Teacher (Hearing Impaired Field), BS-17.
+  - Administrative oversight by the **District Education Officer (DEO) Special Education, Multan** and **Special Education Department, Government of Punjab**.
 - **Faculty & Staff Structure**: JSET, SSET, Allied Health (Psychologists & Physiotherapists), and Non-Teaching/Transport attendants.
 - **Real Campus Photo Gallery**: Interactive lightbox gallery with real school photographs.
 - **Interactive Parent Portal**:
@@ -31,7 +30,6 @@ gsec-jalalpur-pirwala/
 └── assets/
     └── images/              # Real campus photos and high-resolution assets
         ├── school-building-front.jpg
-        ├── principal-office-session.jpg
         ├── school-bus-grounds.jpg
         ├── school-entrance-gate.jpg
         ├── campus-courtyard-palms.jpg
