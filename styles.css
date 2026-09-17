@@ -2607,19 +2607,20 @@ button, input, select, textarea {
 /* Small Tablets & Standard Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.15rem;
   }
   .section {
-    padding: 3.5rem 0;
+    padding: 3.25rem 0;
   }
   .section-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
   }
   .section-title {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
+    line-height: 1.3;
   }
   .section-description {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 
   /* Top Bar */
@@ -2653,24 +2654,41 @@ button, input, select, textarea {
     font-size: 0.6rem;
   }
 
-  /* Hero Section */
+  /* Hero Section - Balanced & Comfortable */
+  .sz-hero-banner {
+    padding: 2.75rem 0 3.25rem;
+  }
+  .sz-hero-container {
+    padding: 0 1.15rem;
+  }
+  .sz-hero-tag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 0.85rem;
+  }
   .sz-hero-title {
-    font-size: 1.85rem;
-    line-height: 1.25;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.01em;
   }
   .sz-hero-desc {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
   }
   .sz-hero-actions {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
     width: 100%;
   }
   .sz-btn {
     width: 100%;
+    min-height: 42px;
     justify-content: center;
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 1rem;
     font-size: 0.82rem;
+    font-weight: 700;
   }
 
   /* 4-Color Feature Strip */
@@ -2704,7 +2722,7 @@ button, input, select, textarea {
     padding: 1.25rem 1rem;
   }
   .principal-name {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   .principal-body {
     padding: 1.25rem 1rem;
@@ -2823,9 +2841,24 @@ button, input, select, textarea {
     text-align: center;
     gap: 0.5rem;
   }
+
+  /* WhatsApp Float - Balanced & Safe Area */
+  .whatsapp-float-btn {
+    bottom: max(1.15rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
+    right: 0.85rem;
+    padding: 0.42rem 0.8rem;
+    font-size: 0.7rem;
+    gap: 0.35rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+    z-index: 999;
+  }
+  .whatsapp-float-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
-/* Compact Mobile Devices (<= 480px, 430px, 412px, 390px, 375px, 360px, 320px) */
+/* Compact Mobile Devices (<= 480px, 430px, 412px, 390px, 375px) */
 @media (max-width: 480px) {
   .sz-top-bar {
     padding: 0.4rem 0;
@@ -2885,43 +2918,78 @@ button, input, select, textarea {
     word-break: break-all;
   }
 
-  /* Hero */
+  /* Hero - Fine-tuned font size & comfortable padding */
   .sz-hero-banner {
-    padding: 2.75rem 0 3rem;
+    padding: 2.25rem 0 2.75rem;
+  }
+  .sz-hero-container {
+    padding: 0 1.15rem;
+  }
+  .sz-hero-tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+    margin-bottom: 0.75rem;
   }
   .sz-hero-title {
-    font-size: 1.55rem;
+    font-size: 1.32rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
   }
   .sz-hero-desc {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     line-height: 1.55;
+    margin-bottom: 1.25rem;
   }
-
-  /* WhatsApp Float */
-  .whatsapp-float-btn {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 0.85rem;
-    font-size: 0.72rem;
+  .sz-hero-actions {
+    gap: 0.55rem;
+  }
+  .sz-btn {
+    min-height: 40px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
-/* Extra Small (<= 360px) */
+/* Extra Small (<= 360px, 320px) */
 @media (max-width: 360px) {
+  .container {
+    padding: 0 0.85rem;
+  }
   .sz-school-title {
     font-size: 0.95rem;
   }
+  .sz-hero-banner {
+    padding: 2rem 0 2.5rem;
+  }
+  .sz-hero-container {
+    padding: 0 0.85rem;
+  }
   .sz-hero-title {
-    font-size: 1.38rem;
+    font-size: 1.18rem;
+    line-height: 1.3;
+  }
+  .sz-hero-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
   .sz-nav-cta {
-    padding: 0.35rem 0.6rem;
+    padding: 0.35rem 0.55rem;
     font-size: 0.68rem;
   }
   .sz-mobile-toggle {
     width: 34px;
     height: 34px;
     font-size: 1.15rem;
+  }
+  .whatsapp-float-btn {
+    bottom: max(0.9rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
+    right: 0.65rem;
+    padding: 0.38rem 0.7rem;
+    font-size: 0.65rem;
+  }
+  .whatsapp-float-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
