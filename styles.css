@@ -138,10 +138,10 @@ body.high-contrast .btn-primary-lg {
 
 /* Dyslexia-Friendly Typography */
 body.dyslexic-font {
-  --font-base: 'Lexend', 'Atkinson Hyperlegible', 'Comic Sans MS', 'Arial', sans-serif !important;
-  --font-heading: 'Lexend', 'Atkinson Hyperlegible', 'Comic Sans MS', 'Arial', sans-serif !important;
-  letter-spacing: 0.05em;
-  word-spacing: 0.1em;
+  --font-base: 'Lexend', 'Atkinson Hyperlegible', sans-serif !important;
+  --font-heading: 'Lexend', 'Atkinson Hyperlegible', sans-serif !important;
+  letter-spacing: 0.04em;
+  word-spacing: 0.08em;
   line-height: 1.8;
 }
 
@@ -1967,6 +1967,16 @@ button, input, select, textarea {
   box-shadow: 0 0 0 3px rgba(11, 102, 35, 0.15);
 }
 
+.form-control.is-invalid {
+  border-color: #dc2626 !important;
+  background-color: #fffafb;
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+
 .form-select {
   cursor: pointer;
 }
@@ -2138,6 +2148,8 @@ button, input, select, textarea {
 .slip-table td {
   color: var(--text-main);
   font-weight: 700;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .slip-next-steps {
@@ -3033,6 +3045,10 @@ button, input, select, textarea {
     padding: 0 0.85rem;
   }
 
+  .gov-top-bar-inner {
+    gap: 0.4rem;
+  }
+
   .header-contact-group {
     gap: 0.5rem;
   }
@@ -3052,9 +3068,11 @@ button, input, select, textarea {
   }
 
   .btn-primary-header {
-    padding: 0.4rem 0.7rem;
+    padding: 0.45rem 0.75rem;
     font-size: 0.7rem;
     letter-spacing: 0.01em;
+    min-height: 36px;
+    touch-action: manipulation;
   }
 
   .pillars-grid {
@@ -3086,6 +3104,15 @@ button, input, select, textarea {
     width: 100%;
   }
 
+  .slip-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slip-actions .btn {
+    width: 100%;
+  }
+
   .institution-name {
     font-size: 1.1rem;
   }
@@ -3102,6 +3129,10 @@ button, input, select, textarea {
 
 /* Ultra-Compact Mobiles (<= 360px) */
 @media (max-width: 360px) {
+  .gov-top-left, .gov-top-right {
+    gap: 0.35rem;
+  }
+
   .header-contact-group {
     gap: 0.35rem;
   }

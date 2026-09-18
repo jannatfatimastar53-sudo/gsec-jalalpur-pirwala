@@ -1,10 +1,10 @@
-const CACHE_NAME = 'gsec-jalalpur-v7';
+const CACHE_NAME = 'gsec-jalalpur-v8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './404.html',
-  './styles.css?v=3.2',
-  './app.js?v=3.1',
+  './styles.css?v=3.3',
+  './app.js?v=3.2',
   './manifest.json',
   './assets/images/logo.svg',
   './assets/images/school-building-front.jpg',
