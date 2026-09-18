@@ -1,9 +1,10 @@
-const CACHE_NAME = 'gsec-jalalpur-v5';
+const CACHE_NAME = 'gsec-jalalpur-v7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './styles.css',
-  './app.js',
+  './404.html',
+  './styles.css?v=3.2',
+  './app.js?v=3.1',
   './manifest.json',
   './assets/images/logo.svg',
   './assets/images/school-building-front.jpg',
@@ -35,9 +36,22 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Network-first strategy to always show the freshest version
+// Network-first caching strategy with offline fallback
 self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+  
   e.respondWith(
-    fetch(e.request).catch(() => caches.match(e.request))
+    fetch(e.request)
+      .then((response) => {
+        // Clone and store fresh response
+        if (response && response.status === 200) {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(e.request, responseClone);
+          });
+        }
+        return response;
+      })
+      .catch(() => caches.match(e.request).then((cached) => cached || caches.match('./index.html')))
   );
 });

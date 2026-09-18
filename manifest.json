@@ -1,16 +1,17 @@
 {
   "name": "Govt. Special Education Centre, Jalalpur Pirwala",
   "short_name": "GSEC Jalalpur",
-  "description": "Official portal for Govt. Special Education Centre Jalalpur Pirwala - Special Education Department, Govt of Punjab",
+  "description": "Official institutional portal of Govt. Special Education Centre, Jalalpur Pirwala - Special Education Department, Govt. of Punjab",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0b6623",
-  "theme_color": "#0b6623",
+  "background_color": "#074718",
+  "theme_color": "#074718",
   "icons": [
     {
       "src": "assets/images/logo.svg",
       "sizes": "192x192 512x512",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }
